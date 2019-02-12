@@ -3,7 +3,6 @@ package com.example.nytime.presentation.viewmodel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-
 import com.example.nytime.data.entities.Article;
 import com.example.nytime.domain.ArticlesUseCase;
 
@@ -14,11 +13,11 @@ public class ArticlesViewModel extends ViewModel {
     private ArticlesUseCase articlesUseCase;
 
 
-    public ArticlesViewModel(ArticlesUseCase articlesUseCase){
+    public ArticlesViewModel(ArticlesUseCase articlesUseCase) {
         this.articlesUseCase = articlesUseCase;
     }
 
-    public LiveData<List<Article>> loadArticles(){
+    public LiveData<List<Article>> loadArticles() {
         return articlesUseCase.getArticles();
     }
 

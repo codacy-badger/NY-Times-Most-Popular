@@ -3,9 +3,6 @@ package com.example.nytime.dagger.modules;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.nytime.dagger.qualifier.ApplicationContext;
-
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -31,8 +28,6 @@ public class ContextModule {
     Context provideApplication(Application application) {
         return application;
     }
-
-
 
 
 }

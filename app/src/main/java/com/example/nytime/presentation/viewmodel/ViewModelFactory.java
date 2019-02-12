@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-
 import com.example.nytime.domain.ArticlesUseCase;
 
 import javax.inject.Inject;
@@ -14,7 +13,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     ArticlesUseCase articlesUseCase;
 
     @Inject
-    public ViewModelFactory(ArticlesUseCase articlesUseCase){
+    public ViewModelFactory(ArticlesUseCase articlesUseCase) {
         this.articlesUseCase = articlesUseCase;
     }
 

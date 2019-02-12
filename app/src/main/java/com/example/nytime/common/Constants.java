@@ -8,13 +8,12 @@ import com.example.nytime.BuildConfig;
 
 public interface Constants {
 
-     String URL = "http://api.nytimes.com/svc/mostpopular/";
+    String URL = "http://api.nytimes.com/svc/mostpopular/";
 
-     String API_KEY = BuildConfig.API_KEY;
+    String API_KEY = BuildConfig.API_KEY;
 
 
-     String ARTICLE = "article";
-
+    String ARTICLE = "article";
 
 
 }

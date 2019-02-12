@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.support.v4.app.Fragment;
 
-//import com.example.nytime.dagger.component.DaggerAppComponent;
-
 import com.example.nytime.common.Constants;
 import com.example.nytime.dagger.component.DaggerAppComponent;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -17,7 +15,9 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class ArticlesApplication extends Application implements HasActivityInjector , HasSupportFragmentInjector {
+//import com.example.nytime.dagger.component.DaggerAppComponent;
+
+public class ArticlesApplication extends Application implements HasActivityInjector, HasSupportFragmentInjector {
 
 
     @Inject
@@ -25,6 +25,7 @@ public class ArticlesApplication extends Application implements HasActivityInjec
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentInjector;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,8 +38,6 @@ public class ArticlesApplication extends Application implements HasActivityInjec
 
         Fresco.initialize(this);
     }
-
-
 
 
     @Override

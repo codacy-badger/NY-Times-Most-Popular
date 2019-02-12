@@ -1,9 +1,9 @@
 package com.example.nytime.presentation;
 
+import android.os.Bundle;
 import android.support.test.espresso.IdlingRegistry;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.example.nytime.R;
 import com.example.nytime.common.EspressoIdlingResource;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         return fragmentDispatchingAndroidInjector;
     }
 
-    void initView(){
+    void initView() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, articlesFragment, "TAG")
                 .commit();
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
     }
 
 
-    public void replaceCurrentFragment(Bundle data , Fragment fragment){
+    public void replaceCurrentFragment(Bundle data, Fragment fragment) {
         fragment.setArguments(data);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container , fragment , "second_fragement")
+                .replace(R.id.container, fragment, "second_fragement")
                 .addToBackStack(articlesFragment.getClass().getName())
                 .commit();
     }

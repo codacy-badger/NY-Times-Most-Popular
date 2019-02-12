@@ -1,14 +1,25 @@
-
 package com.example.nytime.data.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Medium implements Parcelable {
 
+    public static final Creator<Medium> CREATOR = new Creator<Medium>() {
+        @Override
+        public Medium createFromParcel(Parcel in) {
+            return new Medium(in);
+        }
+
+        @Override
+        public Medium[] newArray(int size) {
+            return new Medium[size];
+        }
+    };
     @SerializedName("approved_for_syndication")
     private Long mApprovedForSyndication;
     @SerializedName("caption")
@@ -54,18 +65,6 @@ public class Medium implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<Medium> CREATOR = new Creator<Medium>() {
-        @Override
-        public Medium createFromParcel(Parcel in) {
-            return new Medium(in);
-        }
-
-        @Override
-        public Medium[] newArray(int size) {
-            return new Medium[size];
-        }
-    };
 
     public Long getApprovedForSyndication() {
         return mApprovedForSyndication;

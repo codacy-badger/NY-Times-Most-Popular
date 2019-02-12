@@ -1,15 +1,25 @@
-
 package com.example.nytime.data.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Article implements Parcelable {
 
+    public static final Creator<Article> CREATOR = new Creator<Article>() {
+        @Override
+        public Article createFromParcel(Parcel in) {
+            return new Article(in);
+        }
+
+        @Override
+        public Article[] newArray(int size) {
+            return new Article[size];
+        }
+    };
     @SerializedName("abstract")
     private String mAbstract;
     @SerializedName("adx_keywords")
@@ -30,7 +40,7 @@ public class Article implements Parcelable {
     private List<Medium> mMedia;
     @SerializedName("org_facet")
     private Object mOrgFacet;
-   @SerializedName("per_facet")
+    @SerializedName("per_facet")
     private Object mPerFacet;
     @SerializedName("published_date")
     private String mPublishedDate;
@@ -74,18 +84,6 @@ public class Article implements Parcelable {
             mViews = in.readLong();
         }
     }
-
-    public static final Creator<Article> CREATOR = new Creator<Article>() {
-        @Override
-        public Article createFromParcel(Parcel in) {
-            return new Article(in);
-        }
-
-        @Override
-        public Article[] newArray(int size) {
-            return new Article[size];
-        }
-    };
 
     public String getAbstract() {
         return mAbstract;

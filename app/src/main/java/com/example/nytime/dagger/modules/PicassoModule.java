@@ -2,8 +2,6 @@ package com.example.nytime.dagger.modules;
 
 import android.app.Application;
 
-
-import com.example.nytime.dagger.qualifier.ApplicationContext;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 

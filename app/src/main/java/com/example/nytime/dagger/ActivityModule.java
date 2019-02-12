@@ -1,8 +1,8 @@
 package com.example.nytime.dagger;
 
 
-import com.example.nytime.presentation.master.ArticlesFragment;
 import com.example.nytime.dagger.scopes.PerActivity;
+import com.example.nytime.presentation.master.ArticlesFragment;
 
 import dagger.Module;
 import dagger.Provides;

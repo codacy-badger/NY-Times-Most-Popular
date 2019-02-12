@@ -13,11 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.nytime.presentation.MainActivity;
 import com.example.nytime.R;
 import com.example.nytime.common.Constants;
 import com.example.nytime.data.entities.Article;
 import com.example.nytime.presentation.ItemClickListener;
+import com.example.nytime.presentation.MainActivity;
 import com.example.nytime.presentation.adapters.ArticlesAdapter;
 import com.example.nytime.presentation.details.ArticlesDetailsFragment;
 import com.example.nytime.presentation.viewmodel.ArticlesViewModel;
@@ -33,19 +33,15 @@ import dagger.android.support.AndroidSupportInjection;
 
 public class ArticlesFragment extends Fragment implements ItemClickListener<Article> {
 
-    private ArticlesViewModel mViewModel;
     @BindView(R.id.articles_recycler)
     RecyclerView articlesRecyclerView;
-
     @Inject
     ArticlesAdapter adapter;
-
     @Inject
     ViewModelFactory viewModelFactory;
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    private ArticlesViewModel mViewModel;
 
     public static ArticlesFragment newInstance() {
         return new ArticlesFragment();
@@ -71,7 +67,7 @@ public class ArticlesFragment extends Fragment implements ItemClickListener<Arti
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(getActivity() , viewModelFactory).get(ArticlesViewModel.class);
+        mViewModel = ViewModelProviders.of(getActivity(), viewModelFactory).get(ArticlesViewModel.class);
     }
 
     void initViews() {
@@ -80,7 +76,7 @@ public class ArticlesFragment extends Fragment implements ItemClickListener<Arti
         articlesRecyclerView.setAdapter(adapter);
     }
 
-    private void setupToolbar(){
+    private void setupToolbar() {
         ((MainActivity) getActivity()).setSupportActionBar(toolbar);
     }
 
@@ -103,7 +99,7 @@ public class ArticlesFragment extends Fragment implements ItemClickListener<Arti
     @Override
     public void onItemClick(int position, Article model) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable(Constants.ARTICLE , model);
-        ((MainActivity) getActivity()).replaceCurrentFragment(bundle , new ArticlesDetailsFragment());
+        bundle.putParcelable(Constants.ARTICLE, model);
+        ((MainActivity) getActivity()).replaceCurrentFragment(bundle, new ArticlesDetailsFragment());
     }
 }

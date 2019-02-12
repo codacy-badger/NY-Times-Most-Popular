@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.nytime.presentation.MainActivity;
 import com.example.nytime.R;
 import com.example.nytime.common.Constants;
 import com.example.nytime.data.entities.Article;
+import com.example.nytime.presentation.MainActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.BindView;
@@ -21,33 +21,24 @@ import butterknife.ButterKnife;
 public class ArticlesDetailsFragment extends Fragment {
 
 
-    private Article article;
-
     @BindView(R.id.image)
     SimpleDraweeView image;
-
     @BindView(R.id.title)
     TextView title;
-
     @BindView(R.id.description)
     TextView description;
-
     @BindView(R.id.created_by)
     TextView createdBy;
-
     @BindView(R.id.source)
     TextView source;
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
-
+    private Article article;
 
 
     public ArticlesDetailsFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -61,15 +52,15 @@ public class ArticlesDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_articles_details, container, false);
-        ButterKnife.bind(this , view);
+        View view = inflater.inflate(R.layout.fragment_articles_details, container, false);
+        ButterKnife.bind(this, view);
         setupToolbar();
         setViewsData();
         return view;
     }
 
 
-    private void setupToolbar(){
+    private void setupToolbar() {
         ((MainActivity) getActivity()).setSupportActionBar(toolbar);
         ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ((MainActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -81,16 +72,13 @@ public class ArticlesDetailsFragment extends Fragment {
         });
     }
 
-    private void setViewsData(){
+    private void setViewsData() {
         image.setImageURI(article.getMedia().get(0).getMediaMetadata().get(4).getUrl());
         title.setText(article.getTitle());
         description.setText(article.getAbstract());
         createdBy.setText(article.getByline());
         source.setText(article.getSource());
     }
-
-
-
 
 
 }

@@ -89,7 +89,7 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient , RxJava2CallAdapterFactory rxJava2CallAdapterFactory) {
+    Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient, RxJava2CallAdapterFactory rxJava2CallAdapterFactory) {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(rxJava2CallAdapterFactory)
@@ -101,7 +101,7 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    RxJava2CallAdapterFactory provideRxJava2CallAdapterFactory(){
-        return  RxJava2CallAdapterFactory.create();
+    RxJava2CallAdapterFactory provideRxJava2CallAdapterFactory() {
+        return RxJava2CallAdapterFactory.create();
     }
 }

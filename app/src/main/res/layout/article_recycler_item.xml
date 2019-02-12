@@ -25,14 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/icon_right"
+        android:layout_toLeftOf="@+id/icon_right"
         android:layout_toEndOf="@+id/image"
         android:layout_toRightOf="@+id/image"
+        android:ellipsize="end"
         android:maxLines="2"
         android:text="ahmed "
         android:textColor="@android:color/black"
-        android:ellipsize="end"
-        android:layout_toLeftOf="@+id/icon_right"
-        android:layout_toStartOf="@+id/icon_right"
         android:textSize="18sp" />
 
 
@@ -41,15 +41,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/icon_right"
+        android:layout_toLeftOf="@+id/icon_right"
         android:layout_toEndOf="@+id/image"
         android:layout_toRightOf="@+id/image"
-        android:layout_toLeftOf="@+id/icon_right"
-        android:layout_toStartOf="@+id/icon_right"
         android:ellipsize="end"
-        android:textSize="14sp"
         android:maxLines="1"
-        android:layout_marginBottom="8dp"
-        android:text="ahmed " />
+        android:text="ahmed "
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/source"
@@ -58,33 +58,30 @@
         android:layout_below="@id/created_by"
         android:layout_toEndOf="@+id/image"
         android:layout_toRightOf="@+id/image"
-        android:textSize="10sp"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:textSize="10sp" />
 
     <include
-        android:layout_height="wrap_content"
+        layout="@layout/date_row"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/created_by"
-        android:layout_toLeftOf="@+id/icon_right"
         android:layout_toStartOf="@+id/icon_right"
 
-        layout="@layout/date_row"
-        />
+        android:layout_toLeftOf="@+id/icon_right" />
 
     <ImageView
+        android:id="@+id/icon_right"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:id="@+id/icon_right"
-        android:layout_centerInParent="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
 
 
-
-        android:src="@drawable/arrow_right"
-        />
+        android:src="@drawable/arrow_right" />
 
 
 </RelativeLayout>

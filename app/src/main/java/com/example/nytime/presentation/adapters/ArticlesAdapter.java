@@ -46,12 +46,12 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         holder.image.setImageURI(article.getMedia().get(0).getMediaMetadata().get(2).getUrl());
     }
 
-    public void setArticles(List<Article> articles){
+    public void setArticles(List<Article> articles) {
         this.articles = articles;
         notifyDataSetChanged();
     }
 
-    public void setItemClickListenr(ItemClickListener<Article> itemClickListenr){
+    public void setItemClickListenr(ItemClickListener<Article> itemClickListenr) {
         this.itemClickListener = itemClickListenr;
     }
 
@@ -80,8 +80,8 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (itemClickListener != null){
-                        itemClickListener.onItemClick(getAdapterPosition() , articles.get(getAdapterPosition()));
+                    if (itemClickListener != null) {
+                        itemClickListener.onItemClick(getAdapterPosition(), articles.get(getAdapterPosition()));
                     }
                 }
             });

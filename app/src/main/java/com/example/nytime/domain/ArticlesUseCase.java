@@ -41,13 +41,15 @@ public class ArticlesUseCase {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
+
                     @Override
                     public void onNext(ArticlesResponse articlesResponse) {
                         data.postValue(articlesResponse.getArticles());
                     }
+
                     @Override
                     public void onError(Throwable e) {
-                        Log.d("error" , e.getMessage());
+                        Log.d("error", e.getMessage());
                         EspressoIdlingResource.decrement();
 
 

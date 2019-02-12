@@ -1,4 +1,3 @@
-
 package com.example.nytime.data.entities;
 
 import android.os.Parcel;
@@ -8,6 +7,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class MediaMetadatum implements Parcelable {
 
+    public static final Creator<MediaMetadatum> CREATOR = new Creator<MediaMetadatum>() {
+        @Override
+        public MediaMetadatum createFromParcel(Parcel in) {
+            return new MediaMetadatum(in);
+        }
+
+        @Override
+        public MediaMetadatum[] newArray(int size) {
+            return new MediaMetadatum[size];
+        }
+    };
     @SerializedName("format")
     private String mFormat;
     @SerializedName("height")
@@ -31,18 +41,6 @@ public class MediaMetadatum implements Parcelable {
             mWidth = in.readLong();
         }
     }
-
-    public static final Creator<MediaMetadatum> CREATOR = new Creator<MediaMetadatum>() {
-        @Override
-        public MediaMetadatum createFromParcel(Parcel in) {
-            return new MediaMetadatum(in);
-        }
-
-        @Override
-        public MediaMetadatum[] newArray(int size) {
-            return new MediaMetadatum[size];
-        }
-    };
 
     public String getFormat() {
         return mFormat;
