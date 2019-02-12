@@ -6,7 +6,7 @@ package com.example.nytime.dagger.modules;
 
 import android.app.Application;
 
-import com.example.nytime.application.Constants;
+import com.example.nytime.common.Constants;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,8 +14,6 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.File;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;

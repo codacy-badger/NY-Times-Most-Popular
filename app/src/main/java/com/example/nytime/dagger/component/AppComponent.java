@@ -2,12 +2,11 @@ package com.example.nytime.dagger.component;
 
 import android.app.Application;
 
-import com.example.nytime.application.ArticlesApplication;
-import com.example.nytime.articles.dagger.ActivityBuilder;
+import com.example.nytime.ArticlesApplication;
+import com.example.nytime.dagger.ActivityBuilder;
 import com.example.nytime.dagger.modules.ContextModule;
 import com.example.nytime.dagger.modules.NetworkModule;
 import com.example.nytime.dagger.modules.PicassoModule;
-import com.example.nytime.dagger.qualifier.ApplicationContext;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
